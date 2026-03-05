@@ -1,0 +1,24 @@
+{
+  "name": "openclaw-travel-price-agent",
+  "version": "1.0.0",
+  "description": "旅游价格查询助手 - Agoda酒店最低价查询 + 携程机票查询",
+  "main": "agoda-persistent.js",
+  "scripts": {
+    "agoda": "node agoda-persistent.js",
+    "ctrip": "node ctrip-flight.js"
+  },
+  "keywords": [
+    "agoda",
+    "ctrip",
+    "travel",
+    "price",
+    "hotel",
+    "flight",
+    "openclaw"
+  ],
+  "author": "konakona",
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.58.0"
+  }
+}
