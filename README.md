@@ -83,20 +83,30 @@ npx playwright install chromium
 #### Agoda 酒店查询
 
 ```bash
+# 命令行参数方式
+node agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
+```
+
+**参数说明：**
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `--checkIn` | 入住日期 (YYYY-MM-DD) | 2026-06-01 |
+| `--checkOut` | 退房日期 (YYYY-MM-DD) | 2026-06-12 |
+| `--adults` | 成人数量 | 3 |
+| `--rooms` | 房间数 | 1 |
+
+**示例：**
+
+```bash
+# 查询 2026-05-15 到 2026-05-17，2 个成人，1 个房间
+node agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
+
+# 使用默认参数（2026-06-01 到 2026-06-12，3 个成人）
 node agoda-persistent.js
 ```
 
-修改脚本中的 URL 参数：
-
-```javascript
-// 关键参数说明
-checkIn=2026-06-01    // 入住日期
-checkOut=2026-06-12   // 退房日期
-rooms=1               // 房间数
-adults=3              // 成人数
-children=0            // 儿童数
-sort=priceLowToHigh   // 按价格升序排列
-```
+> 注意：城市 ID 已固定为图鲁斯社岛 (280892)，如需查询其他城市需修改脚本中的 URL。
 
 #### 携程机票查询
 
