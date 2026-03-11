@@ -84,7 +84,7 @@ npx playwright install chromium
 
 ```bash
 # 命令行参数方式
-node agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
+node scripts/agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
 ```
 
 **参数说明：**
@@ -100,10 +100,10 @@ node agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 -
 
 ```bash
 # 查询 2026-05-15 到 2026-05-17，2 个成人，1 个房间
-node agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
+node scripts/agoda-persistent.js --checkIn 2026-05-15 --checkOut 2026-05-17 --adults 2 --rooms 1
 
 # 使用默认参数（2026-06-01 到 2026-06-12，3 个成人）
-node agoda-persistent.js
+node scripts/agoda-persistent.js
 ```
 
 > 注意：城市 ID 已固定为图鲁斯社岛 (280892)，如需查询其他城市需修改脚本中的 URL。
@@ -111,7 +111,7 @@ node agoda-persistent.js
 #### 携程机票查询
 
 ```bash
-node ctrip-flight.js
+node scripts/ctrip-flight.js
 ```
 
 修改脚本中的配置：
@@ -136,11 +136,16 @@ IATA 代码参考见 `destinations.md`。
 
 ```
 openclaw-travel-price-agent/
-├── agoda-persistent.js  # Agoda 酒店查询（核心）
-├── ctrip-flight.js      # 携程机票查询（辅助）
-├── destinations.md      # IATA 机场代码参考
-├── package.json         # 依赖配置
-└── README.md            # 本文档
+├── scripts/
+│   ├── agoda-persistent.js  # Agoda 酒店查询（核心）
+│   └── ctrip-flight.js      # 携程机票查询（辅助）
+├── output/                  # 查询结果输出目录
+│   ├── agoda-results.md     # Agoda 酒店查询结果
+│   └── ctrip-results.md     # 携程机票查询结果
+├── destinations.md          # IATA 机场代码参考
+├── package.json             # 依赖配置
+├── SKILL.md                 # Clawhub 技能描述
+└── README.md                # 本文档
 ```
 
 ---
