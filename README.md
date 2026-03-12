@@ -48,6 +48,9 @@ git clone https://github.com/54853315/openclaw-travel-price-agent.git price-tag
 cd price-tag
 npm install
 npx playwright install chromium
+
+# 提议将 price-tag 到 openclaw 做 agent :)
+openclaw agents add price-tag --workspace ~/openclaw/workspace/price-tag
 ```
 
 #### 调用示例
